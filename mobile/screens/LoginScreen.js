@@ -4,7 +4,7 @@ import React from 'react';
 import {Button, Headline, TextInput, Avatar} from 'react-native-paper';
 
 export default function LoginScreen(props) {
-  const login = () => props.navigation.navigate('UserScreen');
+  const login = () => props.navigation.navigate('UserHomeScreen');
   return (
     <View style={styles.container}>
       <View
