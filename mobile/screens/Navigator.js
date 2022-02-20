@@ -3,20 +3,17 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import LoginScreen from './LoginScreen';
 import {NavigationContainer} from '@react-navigation/native';
-import UserScreen from './UserScreen';
-import UserHomeScreen from './UserHomeScreen';
-
-const {Navigator, Screen} = createStackNavigator();
+import LoadingScreen from './LoadingScreen';
 
 const AppNavigator = () => {
+  const AuthStack = createStackNavigator();
   return (
-    <NavigationContainer>
-      <Navigator headerMode="none" initialRouteName="Login">
-        <Screen name="Login" component={LoginScreen}></Screen>
-        <Screen name="UserScreen" component={UserScreen}></Screen>
-        <Screen name="UserHomeScreen" component={UserHomeScreen}></Screen>
-      </Navigator>
-    </NavigationContainer>
+    <AuthStack.Navigator headerMode="none" initialRouteName="Login">
+      <AuthStack.Screen name="Login" component={LoginScreen}></AuthStack.Screen>
+      <AuthStack.Screen
+        name="LoadingScreen"
+        component={LoadingScreen}></AuthStack.Screen>
+    </AuthStack.Navigator>
   );
 };
 
